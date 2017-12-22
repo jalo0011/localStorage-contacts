@@ -29,14 +29,14 @@ const updateList = function(){
 
 const createItem = function(contact){
     
-    let li = document.creatElement('li');
+    let li = document.createElement('li');
     li.className = 'contact';
     let span = document.createElement('span');
     span.className = 'delete';
     span.setAttribute('data-key',contact.email);
     span.addEventListener('click',removeContact);
     li.appendChild(span);
-    let h3 = doument.createElement('h3');
+    let h3 = document.createElement('h3');
     h3.textContent = contact.fullname;
     li.appendChild(h3);
     let pe = document.createElement('p');
@@ -77,7 +77,7 @@ const addContact = function(ev){
     let email = document.getElementById('input-email').value.trim();
     let phone = document.getElementById('input-phone').value.trim();
     if(fullname && email && phone){
-        obj = {fullname,email,phone};
+        obj = {fullname,phone,email};
         contacts.push(obj);
         localStorage.setItem(KEY,JSON.stringify(contacts));
         document.querySelector('.contactform form').reset();
