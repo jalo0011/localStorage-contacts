@@ -7,7 +7,7 @@ const init = function(){
     if(!localStorage.getItem(KEY)){
         contacts = originalList;
         let str = JSON.stringify(originalList);
-        localStorage.setItem(KEY, str);
+        localStorage.setItem('KEY', str);
     }else{
         contacts = JSON.parse(localStorage.getItem(KEY));   
     }
